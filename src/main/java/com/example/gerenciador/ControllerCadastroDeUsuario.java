@@ -26,6 +26,7 @@ public class ControllerCadastroDeUsuario {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+        stage.setTitle("Cadastro de Usuario");
     }
 
     //quando no botao adiconar
@@ -52,6 +53,7 @@ public class ControllerCadastroDeUsuario {
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Menu");
     }
 
 
