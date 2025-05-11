@@ -28,5 +28,17 @@ public class MenuController {
 
     }
 
+    @FXML
+    private void irParaControleDeLivro () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("controle-de-livro.fxml"));
+        Parent root = loader.load();
+
+        ControlleBookControl control = loader.getController();
+        control.setStage(stage);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
 
 }
