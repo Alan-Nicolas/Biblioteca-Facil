@@ -19,8 +19,8 @@ public class StartApp extends Application {
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("menu");
         primaryStage.show();
+        primaryStage.setTitle("Menu");
 
     }
 
