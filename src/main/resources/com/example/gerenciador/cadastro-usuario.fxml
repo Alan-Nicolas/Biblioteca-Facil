@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="434.0" prefWidth="653.0" style="-fx-background-color: #9dc3c2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControllerCadastroDeUsuario">
+   <children>
+      <Text layoutX="244.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
+      <TextField fx:id="nomeF" layoutX="237.0" layoutY="88.0" style="-fx-background-color: #FFF; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <Text layoutX="244.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula" />
+      <TextField fx:id="matriculaF" layoutX="237.0" layoutY="164.0" style="-fx-background-color: #FFF; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <Button layoutX="210.0" layoutY="217.0" mnemonicParsing="false" onAction="#adicionar" text="ADICIONAR" />
+      <Button layoutX="348.0" layoutY="217.0" mnemonicParsing="false" onAction="#voltarMenu" text="VOLTAR PARA O MENU" />
+   </children>
+</AnchorPane>
