@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControlleBookControl">
+<AnchorPane onDragDetected="#voltarParaMenu" prefHeight="434.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControlleBookControl">
    <children>
       <TableView layoutX="9.0" layoutY="16.0" prefHeight="273.0" prefWidth="576.0">
         <columns>
@@ -15,5 +15,6 @@
             <TableColumn fx:id="editora" prefWidth="75.0" text="Editora" />
         </columns>
       </TableView>
+      <Button layoutX="531.0" layoutY="330.0" mnemonicParsing="false" onAction="#voltarParaMenu" text="Menu" />
    </children>
 </AnchorPane>
