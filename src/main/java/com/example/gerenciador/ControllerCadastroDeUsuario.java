@@ -18,7 +18,11 @@ public class ControllerCadastroDeUsuario {
     @FXML
     private TextField nomeF;
     @FXML
-    private TextField matriculaF;
+    private TextField cpfF;
+    @FXML
+    private TextField telF;
+    @FXML
+    private TextField emailF;
 
     Set<Pessoa> listPessoa = new HashSet<>();
 
@@ -32,15 +36,30 @@ public class ControllerCadastroDeUsuario {
     //quando no botao adiconar
     public void adicionar () {
         String nome = nomeF.getText();
-        String matricula = matriculaF.getText();
+        String cpf = cpfF.getText();
+        String tel = telF.getText();
+        String email = emailF.getText();
 
-        listPessoa.add(new Pessoa(nome, matricula));
 
-        String pessoaAdicionada = "nome: "+nome+ " matricula: "+matricula;
+        listPessoa.add(new Pessoa(nome, cpf, tel, email));
+
+        String pessoaAdicionada = "nome: "+nome+
+                                    " cpf: "+ cpf+
+                                    " telefone: "+tel+
+                                    " email: "+email;
 
         nomeF.clear();
-        matriculaF.clear();
+        cpfF.clear();
+        telF.clear();
+        emailF.clear();
         System.out.println(pessoaAdicionada);
+        /*try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("emprestimo-livro.fxml"));
+            Parent root = loader.load();
+
+            ControllerEmprestimo controller = loader.getController();
+
+        } ch*/
     }
 
     @FXML

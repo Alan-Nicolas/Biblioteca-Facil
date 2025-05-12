@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane onDragDetected="#voltarParaMenu" prefHeight="434.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControlleBookControl">
+<AnchorPane onDragDetected="#initialize" prefHeight="434.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControlleBookControl">
    <children>
-      <TableView layoutX="9.0" layoutY="16.0" prefHeight="273.0" prefWidth="576.0">
+      <TableView fx:id="tableView" layoutX="9.0" layoutY="16.0" onSort="#initialize" prefHeight="273.0" prefWidth="576.0">
         <columns>
           <TableColumn fx:id="codLivro" prefWidth="75.0" text="Cod. Livro" />
           <TableColumn fx:id="tituloLivro" prefWidth="75.0" text="Titulo" />

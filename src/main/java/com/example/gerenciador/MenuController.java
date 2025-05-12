@@ -17,7 +17,7 @@ public class MenuController {
 
     @FXML
     private void irParaCadastro () throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cadastro-usuario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cadastro-usuarios.fxml"));
         Parent root = fxmlLoader.load();
 
         ControllerCadastroDeUsuario controller = fxmlLoader.getController();
@@ -35,6 +35,19 @@ public class MenuController {
 
         ControlleBookControl control = loader.getController();
         control.setStage(stage);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    private void irParaEmprestimo () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("emprestimo-livro.fxml"));
+        Parent root = loader.load();
+
+        ControllerEmprestimo controller = loader.getController();
+        controller.setStage(stage);
+
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
