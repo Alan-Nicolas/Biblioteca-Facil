@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #338a9e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControllerEmprestimo">
+   <children>
+      <Label alignment="CENTER" blendMode="HARD_LIGHT" layoutX="217.0" layoutY="37.0" text="Empréstimo de Livro">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.24" contrast="0.54" hue="-0.17" saturation="0.73" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <textFill>
+            <LinearGradient endX="0.765151414004239" endY="0.3323863636363634" startX="0.38257575396335486" startY="0.29545444430726947">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.20000000298023224" green="0.10716049373149872" blue="0.06074073910713196" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2113055181695828">
+                     <color>
+                        <Color red="0.20000000298023224" green="0.10716049373149872" blue="0.06074073910713196" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.42126514131897697">
+                     <color>
+                        <Color red="0.6421052813529968" green="0.2980636656284332" blue="0.12604288756847382" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4629878869448183">
+                     <color>
+                        <Color red="0.6200000047683716" green="0.394320011138916" blue="0.09920000284910202" opacity="0.5835866332054138" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7751567475297902">
+                     <color>
+                        <Color red="0.2765263020992279" green="0.22421053051948547" blue="0.7473683953285217" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9894737005233765" green="0.23087719082832336" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField layoutX="232.0" layoutY="181.0" />
+      <Text fontSmoothingType="LCD" layoutX="252.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Usuário" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="288.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.522207267833109">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5423956931359355">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <TextField focusTraversable="false" layoutX="232.0" layoutY="125.0" opacity="0.0" />
+      <TextField fx:id="cpfF" layoutX="232.0" layoutY="181.0" />
+      <Text fontSmoothingType="LCD" layoutX="252.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Usuário" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="288.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.522207267833109">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5423956931359355">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <TextField fx:id="CodF" layoutX="232.0" layoutY="238.0" />
+      <Text fontSmoothingType="LCD" layoutX="260.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código do Livro" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <Button layoutX="257.0" layoutY="299.0" mnemonicParsing="false" onAction="#adicionar" text="Emprestar Livro" />
+      <TextField fx:id="userF" layoutX="231.0" layoutY="125.0" />
+      <Button layoutX="401.0" layoutY="299.0" mnemonicParsing="false" onAction="#voltarParaMenu" text="Menu" />
+   </children>
+</AnchorPane>

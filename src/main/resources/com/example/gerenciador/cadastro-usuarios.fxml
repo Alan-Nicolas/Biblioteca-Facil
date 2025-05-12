@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #338a9e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControllerCadastroDeUsuario">
+   <children>
+      <Label alignment="CENTER" blendMode="HARD_LIGHT" layoutX="222.0" layoutY="24.0" text="Cadastro de Usuários">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.24" contrast="0.54" hue="-0.17" saturation="0.73" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <textFill>
+            <LinearGradient endX="0.6022726550246729" endY="0.8787878715630735" startX="0.234848495685693" startY="0.2727272293784402">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6200000047683716" green="0.394320011138916" blue="0.09920000284910202" opacity="0.5835866332054138" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.15477792732166895">
+                     <color>
+                        <Color red="0.20000000298023224" green="0.10716049373149872" blue="0.06074073910713196" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.3835800807537011">
+                     <color>
+                        <Color red="0.6421052813529968" green="0.2980636656284332" blue="0.12604288756847382" opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5382792239766274">
+                     <color>
+                        <Color red="0.2765263020992279" green="0.22421053051948547" blue="0.7473683953285217" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9894737005233765" green="0.23087719082832336" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="nomeF" layoutX="233.0" layoutY="118.0" />
+      <TextField fx:id="cpfF" layoutX="233.0" layoutY="174.0" />
+      <TextField fx:id="telF" layoutX="233.0" layoutY="231.0" />
+      <Text fontSmoothingType="LCD" layoutX="253.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Usuário" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="282.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="287.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="emailF" layoutX="233.0" layoutY="290.0" />
+      <Button layoutX="252.0" layoutY="349.0" mnemonicParsing="false" onAction="#adicionar" text="Cadastrar Usuário" />
+      <Text fontSmoothingType="LCD" layoutX="289.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" wrappingWidth="93.5771484375">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.522207267833109">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5423956931359355">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button layoutX="439.0" layoutY="349.0" minWidth="53.0" mnemonicParsing="false" onAction="#voltarMenu" prefHeight="30.0" prefWidth="53.0" text="Menu" />
+   </children>
+</AnchorPane>
