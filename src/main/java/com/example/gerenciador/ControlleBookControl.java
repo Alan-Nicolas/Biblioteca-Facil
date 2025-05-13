@@ -16,26 +16,34 @@ import java.io.IOException;
 public class ControlleBookControl {
 
     @FXML
-    private TableView<tableEmprestimos> tableView;
+    private TableView<Livros> tableView;
     @FXML
-    private TableColumn<tableEmprestimos,Long > codLivro;
+    private TableColumn<Livros,String > codLivro;
 
     @FXML
-    private TableColumn<tableEmprestimos, String > tituloLivro;
+    private TableColumn<Livros, String > tituloLivro;
 
     @FXML
-    private TableColumn<tableEmprestimos, String> nomeAluno;
+    private TableColumn<Livros, String> nomeAluno;
 
     @FXML
-    private TableColumn<tableEmprestimos, String > matricula;
+    private TableColumn<Livros, String > matricula;
     private Stage stage;
-    private Pessoa pessoa;
-    ObservableList<tableEmprestimos> lista = FXCollections.observableArrayList();
+    ObservableList<Livros> lista = FXCollections.observableArrayList();
 
 
     public void setStage(Stage stage) {
         this.stage = stage;
         stage.setTitle("Controle de Livro");
+    }
+    @FXML
+    public void initialize(){
+        codLivro.setCellValueFactory((new PropertyValueFactory<>("codLivro")));
+        tituloLivro.setCellValueFactory((new PropertyValueFactory<>("tituloLivro")));
+        nomeAluno.setCellValueFactory((new PropertyValueFactory<>("nomeAluno")));
+        matricula.setCellValueFactory((new PropertyValueFactory<>("matricula")));
+
+        tableView.setItems(lista);
     }
 
     @FXML
@@ -52,24 +60,4 @@ public class ControlleBookControl {
 
     }
 
-    @FXML
-    public void initialize() {
-
-        codLivro.setCellValueFactory(new PropertyValueFactory<>("cod"));
-        tituloLivro.setCellValueFactory(new PropertyValueFactory<>("titulo"));
-        nomeAluno.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        matricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
-
-
-
-        String nome = pessoa.getNome();
-        String cpf = pessoa.getCpf();
-        String tel = pessoa.getTelefone();
-        String email = pessoa.getEmail();
-        pessoa = new Pessoa(nome, cpf, tel,  email  );
-
-        lista.add(new tableEmprestimos(1, "exemplo1", pessoa ));
-        tableView.setItems(lista);
-
-    }
 }
