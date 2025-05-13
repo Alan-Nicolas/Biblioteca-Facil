@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -24,7 +25,7 @@ public class ControllerCadastroDeUsuario {
     @FXML
     private TextField emailF;
 
-    Set<Pessoa> listPessoa = new HashSet<>();
+    private GerenciadorDeDados gerenciador = GerenciadorDeDados.getInstance();
 
 
 
@@ -33,34 +34,39 @@ public class ControllerCadastroDeUsuario {
         stage.setTitle("Cadastro de Usuario");
     }
 
-    //quando no botao adiconar
-    public void adicionar () {
+
+    public void adicionar () throws IOException {
         String nome = nomeF.getText();
         String cpf = cpfF.getText();
         String tel = telF.getText();
         String email = emailF.getText();
 
-
-        listPessoa.add(new Pessoa(nome, cpf, tel, email));
-
-        String pessoaAdicionada = "nome: "+nome+
-                                    " cpf: "+ cpf+
-                                    " telefone: "+tel+
-                                    " email: "+email;
+        Pessoa pessoaNova = new Pessoa(nome, cpf, tel, email);
+        gerenciador.adicionarPessoa(pessoaNova);
 
         nomeF.clear();
         cpfF.clear();
         telF.clear();
         emailF.clear();
-        System.out.println(pessoaAdicionada);
-        /*try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("emprestimo-livro.fxml"));
-            Parent root = loader.load();
-
-            ControllerEmprestimo controller = loader.getController();
-
-        } ch*/
+        alertaCadastro();
     }
+
+    private void alertaCadastro () {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Sucesso");
+        alert.setHeaderText("Cadastro concluido");
+        alert.setContentText("cadastro realizado com sucesso");
+        alert.setOnCloseRequest(e -> {
+            try {
+                voltarMenu();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        alert.show();
+    }
+
+
 
     @FXML
     private void voltarMenu () throws IOException {
