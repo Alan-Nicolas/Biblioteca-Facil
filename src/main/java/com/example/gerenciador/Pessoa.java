@@ -16,6 +16,7 @@ public class Pessoa {
     public Pessoa (String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+
     }
 
     @Override
@@ -59,4 +60,5 @@ public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
