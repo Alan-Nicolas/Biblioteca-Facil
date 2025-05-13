@@ -1,22 +1,27 @@
 package com.example.gerenciador;
 
-public class tableEmprestimos {
-    private long cod;
+public class Livros {
+    private String cod;
     private String titulo;
-    private Pessoa pessoa;
 
 
-    public tableEmprestimos(long cod, String titulo, Pessoa pessoa) {
+    public Livros(String cod) {
         this.cod = cod;
-        this.titulo = titulo;
-        this.pessoa = pessoa;
+
+
     }
 
-    public long getCod() {
+    public Livros(String cod, String titulo) {
+        this.cod = cod;
+        this.titulo = titulo;
+
+    }
+
+    public String getCod() {
         return cod;
     }
 
-    public void setCod(long cod) {
+    public void setCod(String cod) {
         this.cod = cod;
     }
 
