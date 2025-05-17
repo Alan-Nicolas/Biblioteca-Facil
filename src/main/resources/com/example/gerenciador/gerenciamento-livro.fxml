@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #338a9e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControllerCadastroDeUsuario">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #338a9e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenciador.ControllerGerenLivro">
    <children>
-      <Label alignment="CENTER" blendMode="HARD_LIGHT" layoutX="216.0" layoutY="22.0" text="Gerenciador de Usuarios">
+      <Label alignment="CENTER" blendMode="HARD_LIGHT" layoutX="216.0" layoutY="22.0" text="Gerenciador de Livros">
          <font>
             <Font name="Constantia" size="18.0" />
          </font>
@@ -56,27 +56,21 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextField fx:id="nomeF" layoutX="233.0" layoutY="118.0" />
-      <TextField fx:id="cpfF" layoutX="233.0" layoutY="174.0" />
-      <TextField fx:id="telF" layoutX="233.0" layoutY="231.0" />
-      <Text fontSmoothingType="LCD" layoutX="253.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Usuário" wrappingWidth="93.5771484375">
+      <TextField fx:id="titleF" layoutX="233.0" layoutY="118.0" />
+      <TextField fx:id="autorF" layoutX="233.0" layoutY="174.0" />
+      <TextField fx:id="codF" layoutX="233.0" layoutY="231.0" />
+      <Text fontSmoothingType="LCD" layoutX="253.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo" textAlignment="CENTER" wrappingWidth="93.5771484375">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="282.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone">
+      <Text fontSmoothingType="LCD" layoutX="282.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="287.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
-         <font>
-            <Font name="Bell MT" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="emailF" layoutX="233.0" layoutY="290.0" />
-      <Button layoutX="123.0" layoutY="337.0" mnemonicParsing="false" onAction="#adicionar" prefWidth="121.0" text="Cadastrar Usuário" />
-      <Text fontSmoothingType="LCD" layoutX="289.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" wrappingWidth="93.5771484375">
+      <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" prefWidth="121.0" text="Adicionar Livro" />
+      <Text fontSmoothingType="LCD" layoutX="289.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" wrappingWidth="93.5771484375">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
@@ -107,9 +101,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="532.0" layoutY="19.0" minWidth="53.0" mnemonicParsing="false" onAction="#voltarMenu" prefHeight="30.0" prefWidth="53.0" text="Menu" />
-      <Button layoutX="262.0" layoutY="337.0" mnemonicParsing="false" onAction="#listar" text="Lista" />
-      <Button layoutX="409.0" layoutY="337.0" mnemonicParsing="false" onAction="#deletarPorCpf" text="Deletar" />
-      <Button layoutX="329.0" layoutY="337.0" mnemonicParsing="false" onAction="#atualizarPorCpf" text="Atualizar" />
+      <Button layoutX="532.0" layoutY="19.0" minWidth="53.0" mnemonicParsing="false" onAction="#voltarParaMenu" prefHeight="30.0" prefWidth="53.0" text="Menu" />
+      <Button layoutX="347.0" layoutY="337.0" mnemonicParsing="false" text="Lista" />
    </children>
 </AnchorPane>

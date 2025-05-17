@@ -142,8 +142,9 @@
             <Font name="Bell MT" size="13.0" />
          </font>
       </Text>
-      <Button layoutX="257.0" layoutY="299.0" mnemonicParsing="false" onAction="#adicionar" text="Emprestar Livro" />
+      <Button layoutX="206.0" layoutY="299.0" mnemonicParsing="false" onAction="#adicionar" text="Emprestar Livro" />
       <TextField fx:id="userF" layoutX="231.0" layoutY="125.0" />
-      <Button layoutX="401.0" layoutY="299.0" mnemonicParsing="false" onAction="#voltarParaMenu" text="Menu" />
+      <Button layoutX="515.0" layoutY="34.0" mnemonicParsing="false" onAction="#voltarParaMenu" text="Menu" />
+      <Button layoutX="335.0" layoutY="299.0" mnemonicParsing="false" text="Lista" />
    </children>
 </AnchorPane>
