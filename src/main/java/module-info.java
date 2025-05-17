@@ -10,9 +10,9 @@ module com.example.gerenciador {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.unsupported.desktop;
 
     opens com.example.gerenciador to javafx.fxml;
     exports com.example.gerenciador;
-
 
 }
