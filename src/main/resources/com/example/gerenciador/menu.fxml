@@ -51,9 +51,9 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="221.0" layoutY="224.0" mnemonicParsing="false" onAction="#irParaControleDeLivro" prefHeight="26.0" prefWidth="148.0" text="CONTROLE DE LIVROS" />
-      <Button layoutX="221.0" layoutY="188.0" mnemonicParsing="false" onAction="#irParaEmprestimo" prefHeight="26.0" prefWidth="148.0" text="EMPRÉSTIMO DE LIVRO" />
-      <Button alignment="CENTER" layoutX="221.0" layoutY="150.0" mnemonicParsing="false" onAction="#irParaCadastro" text="CADASTRO DE USUÁRIO" textAlignment="CENTER" />
+      <Button layoutX="184.0" layoutY="197.0" mnemonicParsing="false" onAction="#irParaControleDeLivro" prefHeight="30.0" prefWidth="232.0" text="GERENCIAMENTO DE LIVROS" />
+      <Button layoutX="184.0" layoutY="246.0" mnemonicParsing="false" onAction="#irParaEmprestimo" prefHeight="30.0" prefWidth="232.0" text="EMPRESTIMO DE LIVRO" />
+      <Button alignment="CENTER" layoutX="184.0" layoutY="149.0" mnemonicParsing="false" onAction="#irParaCadastro" prefHeight="30.0" prefWidth="232.0" text="GERENCIADOR DE USUARIO" textAlignment="CENTER" />
    </children>
    <effect>
       <InnerShadow blurType="GAUSSIAN" choke="0.61" height="26.85" radius="12.0475" width="23.34">
