@@ -10,9 +10,6 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.util.HashSet;
-
-import java.util.Set;
 
 public class ControllerCadastroDeUsuario {
     private Stage stage;
@@ -24,16 +21,12 @@ public class ControllerCadastroDeUsuario {
     private TextField telF;
     @FXML
     private TextField emailF;
-
-    private GerenciadorDeDados gerenciador = GerenciadorDeDados.getInstance();
-
-
+    private ControllerListaDeUsuarios controllerListaDeUsuarios;
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        stage.setTitle("Cadastro de Usuario");
+        stage.setTitle("Gerencimento de Usuario");
     }
-
 
     public void adicionar () throws IOException {
         String nome = nomeF.getText();
@@ -41,14 +34,54 @@ public class ControllerCadastroDeUsuario {
         String tel = telF.getText();
         String email = emailF.getText();
 
-        Pessoa pessoaNova = new Pessoa(nome, cpf, tel, email);
-        gerenciador.adicionarPessoa(pessoaNova);
-
-        nomeF.clear();
+        Usuario usuario = new Usuario(nome, cpf, tel, email);
+        UsuarioManager.getInstance().adicionarUsuario(usuario);
+       nomeF.clear();
         cpfF.clear();
         telF.clear();
         emailF.clear();
         alertaCadastro();
+    }
+
+    @FXML
+    private void atualizarPorCpf () {
+        String buscaCpf = cpfF.getText();
+        int index = UsuarioManager.getInstance().buscarUsuarioPorCpf(buscaCpf);
+
+        if (index >= 0) {
+            Usuario usuarioAtu = new Usuario(nomeF.getText(), cpfF.getText(),telF.getText(), emailF.getText());
+            UsuarioManager.getInstance().atualizarUsuario(index,usuarioAtu);
+
+            if (controllerListaDeUsuarios != null ) {
+                controllerListaDeUsuarios.atualizarTabela();
+            }
+            nomeF.clear();
+            cpfF.clear();
+            telF.clear();
+            emailF.clear();
+        } else {
+            alertaCpfNEcontrado();
+        }
+
+    }
+
+    @FXML
+    private void deletarPorCpf () {
+        String buscaCpf = cpfF.getText();
+
+        if (!buscaCpf.isEmpty()) {
+            UsuarioManager.getInstance().deletarUsuarioPorCpf(buscaCpf);
+            alertaUserDeleter();
+            if (controllerListaDeUsuarios != null) {
+                controllerListaDeUsuarios.atualizarTabela();
+            }
+            nomeF.clear();
+            cpfF.clear();
+            telF.clear();
+            emailF.clear();
+        } else {
+            alertaCpfNEcontrado();
+        }
     }
 
     private void alertaCadastro () {
@@ -66,6 +99,23 @@ public class ControllerCadastroDeUsuario {
         alert.show();
     }
 
+    private void alertaCpfNEcontrado () {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("CPF INCORRETO");
+        alert.setHeaderText("o Cpf nao encontrado");
+        alert.setContentText("Digite um cpf correto!");
+        alert.show();
+    }
+
+    private void alertaUserDeleter () {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("USUARIO EXCLUIDO");
+        alert.setHeaderText("Usuario excluido com sucesso!");
+        alert.setContentText("o user com o CPF: "+cpfF.getText()+"foi excluido!");
+    }
+
+
+
 
 
     @FXML
@@ -79,6 +129,18 @@ public class ControllerCadastroDeUsuario {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Menu");
+    }
+
+    @FXML
+    private void listar () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("usuarios.fxml"));
+        Parent root = loader.load();
+
+        ControllerListaDeUsuarios controller = loader.getController();
+        controller.setStage(stage);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
 
