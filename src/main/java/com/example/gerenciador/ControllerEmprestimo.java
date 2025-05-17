@@ -9,8 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ControllerEmprestimo {
 
@@ -22,8 +20,6 @@ public class ControllerEmprestimo {
 
     @FXML
     private TextField userF;
-
-    private GerenciadorDeDadosLivros gerenciadorLivros = GerenciadorDeDadosLivros.getInstance();
 
     private Stage stage;
 
@@ -50,11 +46,6 @@ public class ControllerEmprestimo {
         String cpf = cpfF.getText();
         String cod = CodF.getText();
 
-
-
-        String pessoaEmprestou = "Nome: "+nome+
-                                 " CPF: "+cpf+
-                                 " codigo livro: "+cod;
         userF.clear();
         cpfF.clear();
         CodF.clear();
@@ -65,7 +56,7 @@ public class ControllerEmprestimo {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Sucesso");
         alert.setHeaderText("Emprestimo concluido");
-        alert.setContentText("emprestimo realizado com sucesso");
+        alert.setContentText("emprestimo do para"+userF.getText()+"  realizado com sucesso");
         alert.setOnCloseRequest(e -> {
             try {
                 voltarParaMenu();
