@@ -1,57 +1,68 @@
 package com.example.gerenciador;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Usuario {
-    private String nome;
-    private String cpf;
-    private String tel;
-    private String email;
+    private StringProperty nome;
+    private StringProperty cpf;
+    private StringProperty tel;
+    private StringProperty email;
 
     public Usuario(String nome, String cpf, String tel, String email) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.tel = tel;
-        this.email = email;
+        this.nome = new SimpleStringProperty(nome);
+        this.cpf = new SimpleStringProperty(cpf);
+        this.tel = new SimpleStringProperty(tel);
+        this.email = new SimpleStringProperty(email);
     }
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", tel='" + tel + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return nome.get();
     }
 
-    public String getNome() {
+    public StringProperty nomeProperty () {
         return nome;
+   }
+   public StringProperty cpfProperty () {
+        return cpf;
+   }
+   public StringProperty telProperty () {
+        return tel;
+   }
+   public StringProperty emailProperty () {
+        return email;
+   }
+
+    public String getNome() {
+        return nome.get();
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome.set(nome);
     }
 
     public String getCpf() {
-        return cpf;
+        return cpf.get();
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.cpf.set(cpf);
     }
 
     public String getTel() {
-        return tel;
+        return tel.get();
     }
 
     public void setTel(String tel) {
-        this.tel = tel;
+        this.tel.set(tel);
     }
 
     public String getEmail() {
-        return email;
+        return email.get();
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email.set(email);
     }
 }

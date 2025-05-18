@@ -1,27 +1,40 @@
 package com.example.gerenciador;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
+
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ControllerEmprestimo {
 
     @FXML
-    private TextField CodF;
+    private DatePicker dataEntrega;
 
     @FXML
-    private TextField cpfF;
+    private DatePicker dataRetirada;
 
     @FXML
-    private TextField userF;
+    private ComboBox<Livros> livrosEmprestimo;
+
+    @FXML
+    private ComboBox<Usuario> nomeList;
+
 
     private Stage stage;
+
+    public void initialize () {
+        nomeList.setItems(UsuarioManager.getInstance().getUsuarios());
+        livrosEmprestimo.setItems(LivroManager.getInstance().getLivros());
+    }
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -40,30 +53,6 @@ public class ControllerEmprestimo {
         stage.setScene(scene);
     }
 
-    @FXML
-    public void adicionar () {
-        String nome = userF.getText();
-        String cpf = cpfF.getText();
-        String cod = CodF.getText();
 
-        userF.clear();
-        cpfF.clear();
-        CodF.clear();
-        alertaEmprestimo();
-    }
 
-    private void alertaEmprestimo () {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Sucesso");
-        alert.setHeaderText("Emprestimo concluido");
-        alert.setContentText("emprestimo do para"+userF.getText()+"  realizado com sucesso");
-        alert.setOnCloseRequest(e -> {
-            try {
-                voltarParaMenu();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
-        alert.show();
-    }
 }

@@ -1,40 +1,57 @@
 package com.example.gerenciador;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Livros {
-    private String cod;
-    private String titulo;
+    private StringProperty titulo;
+    private StringProperty autor;
+    private StringProperty cod;
 
 
-    public Livros(String cod) {
-        this.cod = cod;
-
-
+    public Livros(String titulo, String autor, String cod) {
+        this.titulo = new SimpleStringProperty(titulo);
+        this.autor = new SimpleStringProperty(autor);
+        this.cod = new SimpleStringProperty(cod);
     }
 
-    public Livros(String cod, String titulo) {
-        this.cod = cod;
-        this.titulo = titulo;
-
+    public StringProperty tituloProperty() {
+        return titulo;
     }
-
-    public String getCod() {
+    public StringProperty autorProperty() {
+        return autor;
+    }
+    public StringProperty codProperty() {
         return cod;
     }
 
+
+    public void setTitulo(String titulo) {
+        this.titulo.set(titulo);
+    }
+
+    public void setAutor(String autor) {
+        this.autor.set(autor);
+    }
+
     public void setCod(String cod) {
-        this.cod = cod;
+        this.cod.set(cod);
     }
 
     public String getTitulo() {
-        return titulo;
+        return titulo.get();
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public String getAutor() {
+        return autor.get();
     }
 
+    public String getCod() {
+        return cod.get();
+    }
 
-
-
-
+    @Override
+    public String toString() {
+        return titulo.get();
+    }
 }

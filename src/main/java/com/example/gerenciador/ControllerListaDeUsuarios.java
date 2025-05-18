@@ -33,26 +33,18 @@ public class ControllerListaDeUsuarios {
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        stage.setTitle("Lista de Usuariosd");
+        stage.setTitle("Lista de Usuarios");
     }
-
     @FXML
     public void initialize () {
-        nomeTab.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNome()));
-        cpfTab.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCpf()));
-        telTab.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTel()));
-        emailTab.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
-
+        nomeTab.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        cpfTab.setCellValueFactory(cellData -> cellData.getValue().cpfProperty() );
+        telTab.setCellValueFactory(cellData -> cellData.getValue().telProperty());
+        emailTab.setCellValueFactory(cellData -> cellData.getValue().emailProperty() );
 
         tableView.setItems(UsuarioManager.getInstance().getUsuarios());
 
-
     }
-
-    public void atualizarTabela() {
-        tableView.refresh();
-    }
-
     @FXML
     private void voltarCadastro () throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastro-usuarios.fxml"));

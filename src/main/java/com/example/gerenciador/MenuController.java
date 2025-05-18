@@ -42,7 +42,7 @@ public class MenuController {
 
     @FXML
     private void irParaEmprestimo () throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("emprestimo-livro.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("emprestar-livro.fxml"));
         Parent root = loader.load();
 
         ControllerEmprestimo controller = loader.getController();

@@ -28,19 +28,33 @@ public class ControllerCadastroDeUsuario {
         stage.setTitle("Gerencimento de Usuario");
     }
 
+    @FXML
+    private void voltarMenu () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        Parent root = loader.load();
+
+        MenuController controller = loader.getController();
+        controller.setStage(stage);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Menu");
+    }
+
     public void adicionar () throws IOException {
+
         String nome = nomeF.getText();
         String cpf = cpfF.getText();
         String tel = telF.getText();
         String email = emailF.getText();
 
-        Usuario usuario = new Usuario(nome, cpf, tel, email);
-        UsuarioManager.getInstance().adicionarUsuario(usuario);
-       nomeF.clear();
-        cpfF.clear();
-        telF.clear();
-        emailF.clear();
-        alertaCadastro();
+        if(!nome.isEmpty() && !cpf.isEmpty() && !tel.isEmpty() && !email.isEmpty()) {
+            Usuario usuario = new Usuario(nome, cpf, tel, email);
+            UsuarioManager.getInstance().adicionarUsuario(usuario);
+
+            limparCampos();
+            alertaCadastro();
+        }
     }
 
     @FXML
@@ -48,17 +62,12 @@ public class ControllerCadastroDeUsuario {
         String buscaCpf = cpfF.getText();
         int index = UsuarioManager.getInstance().buscarUsuarioPorCpf(buscaCpf);
 
+
         if (index >= 0) {
             Usuario usuarioAtu = new Usuario(nomeF.getText(), cpfF.getText(),telF.getText(), emailF.getText());
             UsuarioManager.getInstance().atualizarUsuario(index,usuarioAtu);
 
-            if (controllerListaDeUsuarios != null ) {
-                controllerListaDeUsuarios.atualizarTabela();
-            }
-            nomeF.clear();
-            cpfF.clear();
-            telF.clear();
-            emailF.clear();
+            limparCampos();
         } else {
             alertaCpfNEcontrado();
         }
@@ -71,17 +80,25 @@ public class ControllerCadastroDeUsuario {
 
         if (!buscaCpf.isEmpty()) {
             UsuarioManager.getInstance().deletarUsuarioPorCpf(buscaCpf);
+
             alertaUserDeleter();
-            if (controllerListaDeUsuarios != null) {
-                controllerListaDeUsuarios.atualizarTabela();
-            }
-            nomeF.clear();
-            cpfF.clear();
-            telF.clear();
-            emailF.clear();
+
+            limparCampos();
         } else {
             alertaCpfNEcontrado();
         }
+    }
+
+    @FXML
+    private void listar () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("usuarios.fxml"));
+        Parent root = loader.load();
+
+        ControllerListaDeUsuarios controller = loader.getController();
+        controller.setStage(stage);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     private void alertaCadastro () {
@@ -96,6 +113,7 @@ public class ControllerCadastroDeUsuario {
                 throw new RuntimeException(ex);
             }
         });
+
         alert.show();
     }
 
@@ -114,36 +132,12 @@ public class ControllerCadastroDeUsuario {
         alert.setContentText("o user com o CPF: "+cpfF.getText()+"foi excluido!");
     }
 
-
-
-
-
-    @FXML
-    private void voltarMenu () throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-        Parent root = loader.load();
-
-        MenuController controller = loader.getController();
-        controller.setStage(stage);
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Menu");
+    private void limparCampos () {
+        nomeF.clear();
+        cpfF.clear();
+        telF.clear();
+        emailF.clear();
     }
-
-    @FXML
-    private void listar () throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("usuarios.fxml"));
-        Parent root = loader.load();
-
-        ControllerListaDeUsuarios controller = loader.getController();
-        controller.setStage(stage);
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-    }
-
-
 }
 
 

@@ -22,6 +22,7 @@ public class UsuarioManager {
         return instancia;
     }
 
+
     public ObservableList<Usuario> getUsuarios() {
         return usuarios;
     }

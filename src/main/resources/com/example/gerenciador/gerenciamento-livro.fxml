@@ -69,7 +69,7 @@
             <Font name="Bell MT" size="13.0" />
          </font>
       </Text>
-      <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" prefWidth="121.0" text="Adicionar Livro" />
+      <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" onAction="#adicionarLivro" prefWidth="121.0" text="Adicionar Livro" />
       <Text fontSmoothingType="LCD" layoutX="289.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" wrappingWidth="93.5771484375">
          <font>
             <Font name="Bell MT" size="13.0" />
@@ -102,6 +102,6 @@
          </fill>
       </Text>
       <Button layoutX="532.0" layoutY="19.0" minWidth="53.0" mnemonicParsing="false" onAction="#voltarParaMenu" prefHeight="30.0" prefWidth="53.0" text="Menu" />
-      <Button layoutX="347.0" layoutY="337.0" mnemonicParsing="false" text="Lista" />
+      <Button layoutX="347.0" layoutY="337.0" mnemonicParsing="false" onAction="#listarLivro" text="Lista" />
    </children>
 </AnchorPane>
